@@ -13,6 +13,9 @@ It is a website the allows the user to search vegetarian recipes based on variou
 - Redux 
 - Spoonacular API
 
+## Links
+The website can be found on [Netlify](https://progetto-react-amna.netlify.app/). 
+
 
 
 
