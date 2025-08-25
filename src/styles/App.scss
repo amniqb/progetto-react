@@ -1,0 +1,324 @@
+@use "variables" as *;
+@use "sass:color";
+
+body {
+  background-color: $pink-bg;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: $text-dark;
+}
+
+
+h1, h2, h3, .site-title {
+  font-family: 'Poppins', sans-serif; 
+  color: $dark-green;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 1rem;
+
+  /* Main search input */
+  input[type="text"] {
+    width: 90%;          
+    max-width: 800px;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    border: 2px solid $dark-green;
+    border-radius: 12px;
+    background-color: $cream-input;
+    text-align: center;
+    box-shadow: $shadow-light;
+
+    &:focus {
+    outline: none; 
+    border-color: $dark-green; 
+   }
+  }
+
+  /* dropdowns */
+  .filters-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; 
+    width: 90%;
+    max-width: 800px;
+
+    select {
+      flex: 1;                  
+      min-width: 120px;         
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      border: none;
+      background-color: $green-btn;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  button {
+  background-color: $green-btn;
+  color: $dark-green;;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer;
+  &:hover {
+    background-color: color.adjust($green-btn, $lightness: -5%);
+  }
+}
+}
+
+.site-title {
+  color: $dark-green;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 1.5rem;
+  justify-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat 1fr;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.recipe-card {
+  background: $cream-input; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: $shadow-light;
+  text-align: center;
+  transition: transform 0.2s;
+
+  @media (max-width: 768px) { 
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    @media (max-width: 768px) {
+      height: 200px; 
+    }
+  }
+
+  h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+
+  a {
+    color: $dark-green !important;
+    text-decoration: none;
+    transition: border-bottom 0.2s ease;
+
+    &:visited {
+      color: $dark-green !important; 
+    }
+
+    &:hover {
+      border-bottom: 2px solid $dark-green;
+    }
+  }
+}
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  button {
+    background-color: $dark-green;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: color.adjust($dark-green, $lightness: -5%);
+    }
+  }
+}
+
+/* Scroll-up effect */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  transition: all 0.5s ease;
+
+  &.scrolled {
+    margin-top: 1rem;
+  }
+}
+
+.message-card {
+  font-family: 'Nunito', sans-serif;
+  background: $cream-input; 
+  border-radius: 15px;
+  padding: 1.5rem; 
+  margin: 1rem auto; 
+  max-width: 450px; 
+  text-align: center;
+  box-shadow: $shadow-light;
+
+  p {
+    margin: 0;
+    color: $dark-green; 
+    font-weight: 500;
+  }
+
+  .error {
+    color: $dark-green;
+  }
+}
+
+.recipe-page {
+  padding: 2rem;
+
+  .recipe-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: $dark-green;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .back-button {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.5rem 1.2rem;
+    background: $dark-green;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: color.adjust($dark-green, $lightness: -5%);
+    }
+  }
+
+  .recipe-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .recipe-image {
+      flex: 1;
+      min-width: 280px;
+
+      img {
+        width: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+    }
+
+    .recipe-ingredients {
+      flex: 1;
+      min-width: 280px;
+      background: $cream-input;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: $shadow-light;
+
+      h2 {
+        font-family: 'Poppins', sans-serif;
+        color: $dark-green;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: disc inside;
+        padding-left: 0;
+        color: $dark-green;
+        font-family: 'Nunito', sans-serif;
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .recipe-header {
+      flex-direction: column;
+    }
+  }
+
+  .recipe-instructions {
+    background: $cream-input;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: $shadow-light;
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      color: $dark-green;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-family: 'Nunito', sans-serif;
+      color: $dark-green;
+    }
+  }
+}
+
+.search-description {
+  color: $dark-green;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.5;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}

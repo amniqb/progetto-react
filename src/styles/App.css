@@ -1,0 +1,298 @@
+body {
+  background-color: #FFD4D4;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3, .site-title {
+  font-family: "Poppins", sans-serif;
+  color: #283618;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 1rem;
+  /* Main search input */
+  /* dropdowns */
+}
+.search-bar input[type=text] {
+  width: 90%;
+  max-width: 800px;
+  padding: 1.2rem;
+  font-size: 1.3rem;
+  border: 2px solid #283618;
+  border-radius: 12px;
+  background-color: #FFFFE8;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.search-bar input[type=text]:focus {
+  outline: none;
+  border-color: #283618;
+}
+.search-bar .filters-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 800px;
+}
+.search-bar .filters-row select {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #CDE990;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.search-bar button {
+  background-color: #CDE990;
+  color: #283618;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease !important;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background-color: rgb(195.4135338346, 228.7819548872, 122.7180451128);
+}
+
+.site-title {
+  color: #283618;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+@media (max-width: 1200px) {
+  .recipe-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .recipe-grid {
+    grid-template-columns: repeat 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-card {
+  background: #FFFFE8;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+@media (max-width: 768px) {
+  .recipe-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.recipe-card img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .recipe-card img {
+    height: 200px;
+  }
+}
+.recipe-card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+.recipe-card h3 a {
+  color: #283618 !important;
+  text-decoration: none;
+  transition: border-bottom 0.2s ease;
+}
+.recipe-card h3 a:visited {
+  color: #283618 !important;
+}
+.recipe-card h3 a:hover {
+  border-bottom: 2px solid #283618;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.pagination button {
+  background-color: #283618;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.pagination button:hover {
+  background-color: rgb(26.9230769231, 36.3461538462, 16.1538461538);
+}
+
+/* Scroll-up effect */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  transition: all 0.5s ease;
+}
+.search-wrapper.scrolled {
+  margin-top: 1rem;
+}
+
+.message-card {
+  font-family: "Nunito", sans-serif;
+  background: #FFFFE8;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.message-card p {
+  margin: 0;
+  color: #283618;
+  font-weight: 500;
+}
+.message-card .error {
+  color: #283618;
+}
+
+.recipe-page {
+  padding: 2rem;
+}
+.recipe-page .recipe-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #283618;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.recipe-page .back-button {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem 1.2rem;
+  background: #283618;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.recipe-page .back-button:hover {
+  background: rgb(26.9230769231, 36.3461538462, 16.1538461538);
+}
+.recipe-page .recipe-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.recipe-page .recipe-header .recipe-image {
+  flex: 1;
+  min-width: 280px;
+}
+.recipe-page .recipe-header .recipe-image img {
+  width: 100%;
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-page .recipe-header .recipe-ingredients {
+  flex: 1;
+  min-width: 280px;
+  background: #FFFFE8;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.recipe-page .recipe-header .recipe-ingredients h2 {
+  font-family: "Poppins", sans-serif;
+  color: #283618;
+  margin-bottom: 1rem;
+}
+.recipe-page .recipe-header .recipe-ingredients ul {
+  list-style: disc inside;
+  padding-left: 0;
+  color: #283618;
+  font-family: "Nunito", sans-serif;
+}
+.recipe-page .recipe-header .recipe-ingredients ul li {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .recipe-page .recipe-header {
+    flex-direction: column;
+  }
+}
+.recipe-page .recipe-instructions {
+  background: #FFFFE8;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.recipe-page .recipe-instructions h2 {
+  font-family: "Poppins", sans-serif;
+  color: #283618;
+  margin-bottom: 1rem;
+}
+.recipe-page .recipe-instructions p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-family: "Nunito", sans-serif;
+  color: #283618;
+}
+
+.search-description {
+  color: #283618;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .search-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}/*# sourceMappingURL=App.css.map */
