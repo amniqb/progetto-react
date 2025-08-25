@@ -22,7 +22,7 @@ export default function Home() {
         {/*Description before results show*/}
         {!hasSearched && (
           <p className="search-description">
-            Try looking up recipes by filtering by cuisines (e.g. Italian, Japanese, Indian) or ingredients (e.g. rice, cheese, legumes).
+            Try looking up recipes by searching cuisines (e.g. Italian, Japanese, Indian) or ingredients (e.g. rice, cheese, legumes)!
           </p>
         )}
       </div>
