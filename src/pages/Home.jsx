@@ -53,7 +53,7 @@ export default function Home() {
               Previous
             </button>
           )}
-          {recipes.length === 12 && (
+          {recipes.length === 8 && (
             <button onClick={() => handleSearch(lastQuery.query, lastQuery.filters, page + 1)}>
               Next
             </button>

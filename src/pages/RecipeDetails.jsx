@@ -37,8 +37,12 @@ export default function RecipePage() {
         {/* Image and ingredients */}
         <div className="recipe-image">
           <img
-          src={recipe.image && recipe.image.trim() !== "" ? recipe.image : noPhoto}
+          src={recipe.image || noPhoto}
           alt={recipe.title || "Recipe image"}
+          onError={(e) => {
+            e.currentTarget.onerror = null; 
+            e.currentTarget.src = noPhoto;
+            }}
           />
         </div>
 
