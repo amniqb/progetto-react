@@ -1,8 +1,7 @@
 # The Veggie Table 
-<img width="1920" height="1080" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/87cf7791-5a89-4b78-bc22-29fc20218a09" />
-<img width="1920" height="1080" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/fd1beba6-05e5-4741-a1a0-7b2ba0ad95c7" />
-<img width="1920" height="1080" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/5153ca46-b36d-461d-84eb-cf5ae0412c54" />
-
+<img width="1918" height="907" alt="Screenshot (11)" src="https://github.com/user-attachments/assets/b6871abd-dedf-447a-a50d-5e9128058fbe" />
+<img width="1920" height="911" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/21df3c40-af13-4e4a-b67a-c785012c1ca9" />
+<img width="1920" height="914" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/ea604f7e-71a5-4fa7-9e58-3319bce9e600" />
 This is a project I made for  [Start2Impact's](https://www.start2impact.it/) React course with the aim of letting the user look up recipes through Spoonacular API.
 
 ## Features 
