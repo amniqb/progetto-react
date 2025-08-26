@@ -9,6 +9,7 @@ export function useRecipes() {
   const [error, setError] = useState("");
   const [page, setPage] = useState(1);
   const [lastQuery, setLastQuery] = useState({ query: "", filters: {} });
+  const [totalResults, setTotalResults] = useState(0);
 
   const handleSearch = useCallback(async (query, filters = {}, newPage = 1) => {
     setLoading(true);
@@ -24,6 +25,7 @@ export function useRecipes() {
         ...filters,
       });
       setRecipes(data.results);
+      setTotalResults(data.totalResults);
     } catch (err) {
       console.error(err);
       setError("Failed to load recipes. Please try again later.");
