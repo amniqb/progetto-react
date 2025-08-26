@@ -19,8 +19,8 @@ export function useRecipes() {
     try {
       const data = await searchRecipes(query, {
         diet: "vegetarian",
-        number: 8, 
-        offset: (newPage - 1) * 8,
+        number: 12, 
+        offset: (newPage - 1) * 12,
         ...filters,
       });
       setRecipes(data.results);
